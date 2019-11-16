@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {NavController} from "@ionic/angular";
 
 @Component({
     selector: 'app-landing',
@@ -7,10 +8,14 @@ import {Component, OnInit} from '@angular/core';
 })
 export class LandingPage implements OnInit {
 
-    constructor() {
+    constructor(private navCtrl: NavController) {
     }
 
     ngOnInit() {
+    }
+
+    login() {
+        this.navCtrl.navigateRoot('tabs');
     }
 
 }
