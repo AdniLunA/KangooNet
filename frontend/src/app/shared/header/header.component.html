@@ -1,7 +1,10 @@
 <div class="header">
     <img alt="logo" class="header__logo" src="assets/icon/logo.png">
-    <div class="header__title">{{title}}</div>
+    <div class="header__title">
+        <ion-icon (click)="back()" name="arrow-back"></ion-icon>
+        <span>{{title}}</span>
+    </div>
     <div class="header__end">
-        <ion-icon *ngIf="showUser" class="header__user" name="contact"></ion-icon>
+        <ion-icon (click)="openUser()" *ngIf="showUser" class="header__user" name="contact"></ion-icon>
     </div>
 </div>

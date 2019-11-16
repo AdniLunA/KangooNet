@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {NavController} from "@ionic/angular";
 
 @Component({
     selector: 'app-header',
@@ -9,10 +10,18 @@ export class HeaderComponent implements OnInit {
     @Input('title') title: string;
     @Input('showUser') showUser = true;
 
-    constructor() {
+    constructor(private navCtrl: NavController) {
     }
 
     ngOnInit() {
+    }
+
+    back() {
+        this.navCtrl.back();
+    }
+
+    openUser() {
+        this.navCtrl.navigateForward('user');
     }
 
 }
