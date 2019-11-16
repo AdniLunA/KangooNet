@@ -1,0 +1,12 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Tab Three
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <zxing-scanner (scanSuccess)="scanSuccessHandler($event)" *ngIf="scanSuccess"></zxing-scanner>
+    <p *ngIf="scannedId">{{scannedId}}</p>
+</ion-content>
