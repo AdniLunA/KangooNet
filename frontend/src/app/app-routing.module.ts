@@ -15,6 +15,18 @@ const routes: Routes = [
         path: 'user',
         loadChildren: () => import('./pages/user/user.module').then(m => m.UserPageModule)
     },
+    {
+        path: 'register',
+        loadChildren: () => import('./pages/register/register.module').then(m => m.RegisterPageModule)
+    },
+    {
+        path: 'match',
+        loadChildren: () => import('./pages/match/match.module').then(m => m.MatchPageModule)
+    },
+    {
+        path: 'kangoo-net',
+        loadChildren: () => import('./pages/kangoo-net/kangoo-net.module').then(m => m.KangooNetPageModule)
+    },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],
