@@ -62,3 +62,6 @@ import 'zone.js/dist/zone'; // Included with Angular CLI.
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
+
+// refer to https://github.com/mnahkies/ng-qrcode/issues/2
+(window as any).global = window;
