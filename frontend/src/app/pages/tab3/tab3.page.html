@@ -7,6 +7,6 @@
 </ion-header>
 
 <ion-content>
-    <zxing-scanner></zxing-scanner>
-
+    <zxing-scanner (scanSuccess)="scanSuccessHandler($event)" *ngIf="scanSuccess"></zxing-scanner>
+    <p *ngIf="scannedId">{{scannedId}}</p>
 </ion-content>

@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {QrCodeModule} from 'ng-qrcode';
-import {ZXingScannerModule} from "@zxing/ngx-scanner";
+import {ZXingScannerModule} from '@zxing/ngx-scanner';
 
 @NgModule({
   declarations: [],
