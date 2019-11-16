@@ -2,7 +2,7 @@ import {IonicModule} from '@ionic/angular';
 import {RouterModule} from '@angular/router';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {Tab1Page} from './tab1.page';
+import {ConferencePage} from './conference.page';
 import {SharedModule} from "../../shared/shared.module";
 
 @NgModule({
@@ -10,8 +10,9 @@ import {SharedModule} from "../../shared/shared.module";
     IonicModule,
       SharedModule,
     FormsModule,
-    RouterModule.forChild([{ path: '', component: Tab1Page }]),
+      RouterModule.forChild([{path: '', component: ConferencePage}]),
   ],
-  declarations: [Tab1Page],
+    declarations: [ConferencePage],
 })
-export class Tab1PageModule {}
+export class ConferencePageModule {
+}
