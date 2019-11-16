@@ -13,8 +13,13 @@
     font-weight: bold;
   }
 
+  &__end {
+    width: 100px;
+    height: 40px;
+  }
+
   &__user {
     font-size: 40px;
-    padding-left: 60px;
+    float: right;
   }
 }
