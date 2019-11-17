@@ -26,34 +26,36 @@
     </div>
 
     <div *ngIf="scannedRole==='candidate'" class="match--candidate">
-        <div class="match__title">
+        <ion-item class="match__title">
             {{userMatch.name}}
-        </div>
+            <ion-fab-button size="small" slot="end">
+                <ion-icon name="add"></ion-icon>
+            </ion-fab-button>
+        </ion-item>
 
         <ion-list>
             <ion-list-header>Skills</ion-list-header>
-            <ion-chip *ngFor="let item of userMatch.skillList">
-                <ion-icon color="primary" name="school"></ion-icon>
-                <ion-label>{{item}}</ion-label>
-                <ion-icon name="close"></ion-icon>
-            </ion-chip>
+            <div class="tag-group">
+              <span *ngFor="let item of userMatch.skillList">
+                  <app-tag [tag]="item"></app-tag>
+                </span>
+            </div>
         </ion-list>
         <ion-list>
             <ion-list-header>Interessen</ion-list-header>
-            <ion-chip *ngFor="let item of userMatch.interestList">
-                <ion-icon color="primary" name="heart"></ion-icon>
-                <ion-label>{{item}}</ion-label>
-                <ion-icon name="close"></ion-icon>
-            </ion-chip>
+            <div class="tag-group">
+              <span *ngFor="let item of userMatch.interestList">
+                  <app-tag [tag]="item"></app-tag>
+                </span>
+            </div>
         </ion-list>
         <ion-list>
             <ion-list-header>Orte</ion-list-header>
-
-            <ion-chip *ngFor="let item of userMatch.locationList">
-                <ion-icon color="primary" name="pin"></ion-icon>
-                <ion-label>{{item}}</ion-label>
-                <ion-icon name="close"></ion-icon>
-            </ion-chip>
+            <div class="tag-group">
+              <span *ngFor="let item of userMatch.locationList">
+                  <app-tag [tag]="item"></app-tag>
+                </span>
+            </div>
         </ion-list>
     </div>
 </ion-content>

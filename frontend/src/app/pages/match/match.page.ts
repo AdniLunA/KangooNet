@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {ITag, TagType} from "../../interfaces/tag";
 
 @Component({
   selector: 'app-match',
@@ -12,9 +13,9 @@ export class MatchPage implements OnInit {
 
   userMatch = {
     name: 'Koala',
-    skillList: ['skill1', 'skill2'],
-    interestList: ['interest1', 'interest2'],
-    locationList: ['location1', 'location2'],
+    skillList: ['skill1', 'skill2'].map(item => this.convertToTag(item, 'skill')),
+    interestList: ['interest1', 'interest2'].map(item => this.convertToTag(item, 'interest')),
+    locationList: ['location1', 'location2'].map(item => this.convertToTag(item, 'location')),
   };
   companyMatch = {
     name: 'KängooN@',
@@ -47,5 +48,13 @@ export class MatchPage implements OnInit {
 
   retry() {
     this.scanSuccess = false;
+  }
+
+  convertToTag(item: string, type: TagType): ITag {
+    return {
+      name: item,
+      type,
+      allowDelete: true,
+    };
   }
 }
