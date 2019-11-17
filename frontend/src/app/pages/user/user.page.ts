@@ -9,7 +9,8 @@ import {ITag, TagType} from '../../interfaces/tag';
 export class UserPage implements OnInit {
   user = {
     name: 'Känguru',
-    url: 'https://vignette.wikia.nocookie.net/daskaenguru/images/8/8d/Kangaroo-1149807.jpg/revision/latest/scale-to-width-down/670?cb=20190226174403&path-prefix=de',
+    url:
+        'https://vignette.wikia.nocookie.net/daskaenguru/images/8/8d/Kangaroo-1149807.jpg/revision/latest/scale-to-width-down/670?cb=20190226174403&path-prefix=de',
     role: 'candidate',
     jobList: ['job1', 'job2'],
     skillList: ['skill1', 'skill2'].map(item => this.convertToTag(item, 'skill')),

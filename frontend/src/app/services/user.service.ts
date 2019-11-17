@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {ApiService} from './api.service';
-import {IUser} from "../interfaces/user";
+import {IUser} from '../interfaces/user';
 
 @Injectable({
   providedIn: 'root',
@@ -8,7 +8,7 @@ import {IUser} from "../interfaces/user";
 export class UserService {
   constructor(private apiService: ApiService) {}
 
-  getUserList(){
+  getUserList() {
     return this.apiService.get('/user');
   }
 
@@ -17,12 +17,12 @@ export class UserService {
     return this.apiService.get('/user/' + id);
   }
 
-    getUserByName(name: string) {
+  getUserByName(name: string) {
     return this.apiService.get('/login/' + name);
   }
 
   getAvatarList() {
-      return this.apiService.get('/getAvatar');
+    return this.apiService.get('/getAvatar');
   }
 
   createUser(name: string, avatar: string, role: string) {
@@ -30,23 +30,23 @@ export class UserService {
     return this.apiService.post('/create', {
       name,
       avatar,
-      role
+      role,
     });
   }
 
   addContact(idContact: string, idUser: string) {
-      return this.apiService.put('/user/add/' + idContact + '/asFirendTo/' + idUser, null)
+    return this.apiService.put('/user/add/' + idContact + '/asFirendTo/' + idUser, null);
   }
 
   addJob(id: string, req: string[], name: string) {
     return this.apiService.put('/addJob/' + id, {
       name,
-      req
+      req,
     });
   }
 
-    transformUser(response: any): IUser {
-        // @todo
-        return null
-    }
+  transformUser(response: any): IUser {
+    // @todo
+    return null;
+  }
 }

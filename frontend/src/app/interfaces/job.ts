@@ -1,4 +1,4 @@
 export interface IJob {
-    "name": string,
-    "requirementsTags": string[]
+    name: string;
+    requirementsTags: string[];
 }

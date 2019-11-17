@@ -10,7 +10,7 @@ import {SharedModule} from '../../shared/shared.module';
     IonicModule,
     SharedModule,
     FormsModule,
-    RouterModule.forChild([{path: '', component: ConferencePage}]),
+      RouterModule.forChild([{path: '', component: ConferencePage}]),
   ],
   declarations: [ConferencePage],
 })

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ITag, TagType} from "../../interfaces/tag";
+import {ITag, TagType} from '../../interfaces/tag';
 
 @Component({
   selector: 'app-match',
