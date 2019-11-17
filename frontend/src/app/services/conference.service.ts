@@ -14,7 +14,7 @@ export class ConferenceService {
         return this.apiService.get('/conference');
     }
 
-    getConference(String id) {
+    getConference(id: string) {
         //return by id
         return this.apiService.get('/confrence'+id);
     }

@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { ApiService } from './api.service';
+import {Injectable} from '@angular/core';
+import {ApiService} from './api.service';
 
 @Injectable({
   providedIn: 'root',
@@ -34,7 +34,7 @@ export class UserService {
   }
 
   addContact(idContact: string, idUser: string) {
-    return this.apiService.put('/user/add/' + idContact + '/asFirendTo/' + idUser)
+      return this.apiService.put('/user/add/' + idContact + '/asFirendTo/' + idUser, null)
   }
 
   addJob(id: string, req: string[], name: string) {
