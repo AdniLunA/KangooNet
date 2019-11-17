@@ -10,16 +10,20 @@
     <zxing-scanner (scanSuccess)="scanSuccessHandler($event)" *ngIf="!scanSuccess"></zxing-scanner>
     <p *ngIf="scannedId">{{scannedRole | mapRole}} {{scannedId}}</p>
 
-    <div *ngIf="scannedRole==='company'" class="match--company">
-        <div class="match__title">
-            {{companyMatch.name}}: {{companyMatch.matching}}%
-        </div>
+    <!--    <div *ngIf="scannedRole==='company'" class="match&#45;&#45;company">-->
+    <div class="match--company">
+        <ion-item class="match__title">
+            {{companyMatch.name}}: {{companyMatch.matching}}
+            <ion-fab-button size="small" slot="end">
+                <ion-icon name="add"></ion-icon>
+            </ion-fab-button>
+        </ion-item>
 
         <ion-list class="user__list jobs">
             <ion-list-header>Jobs</ion-list-header>
             <div *ngFor="let item of companyMatch.jobList">
                 <ion-item class="job__name">
-                    {{item.name}} - {{item.matching}}%
+                    {{item.name}} - {{item.matching}}
                 </ion-item>
             </div>
         </ion-list>
