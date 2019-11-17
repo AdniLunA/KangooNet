@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { TabsPage } from './tabs.page';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {TabsPage} from './tabs.page';
 
 const routes: Routes = [
   {
@@ -8,42 +8,42 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
+          path: 'conference',
         children: [
           {
             path: '',
-            loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule),
+            loadChildren: () => import('../conference/conference.module').then(m => m.ConferencePageModule),
           },
         ],
       },
       {
-        path: 'tab2',
+          path: 'home',
         children: [
           {
             path: '',
-            loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule),
+            loadChildren: () => import('../home/home.module').then(m => m.HomePageModule),
           },
         ],
       },
       {
-        path: 'tab3',
+          path: 'dashboard',
         children: [
           {
             path: '',
-            loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule),
+            loadChildren: () => import('../dashboard/dashboard.module').then(m => m.DashboardPageModule),
           },
         ],
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+          redirectTo: '/tabs/home',
         pathMatch: 'full',
       },
     ],
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+      redirectTo: '/tabs/home',
     pathMatch: 'full',
   },
 ];

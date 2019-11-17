@@ -1,0 +1,26 @@
+.header {
+  background-color: wheat;
+  display: flex;
+  line-height: 42px;
+  justify-content: space-between;
+  padding: 7px;
+
+  &__logo {
+    height: 42px;
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  &__end {
+    width: 100px;
+    height: 40px;
+  }
+
+  &__user {
+    font-size: 40px;
+    float: right;
+  }
+}

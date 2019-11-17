@@ -1,0 +1,37 @@
+<ion-content>
+    <div class="register">
+        <div class="register__header">
+            <img alt="logo" class="register__logo" src="assets/icon/logo.png">
+            <div class="register__subtitle">
+                Dein Sprung in den neuen Job!
+            </div>
+        </div>
+
+        <div class="register__form">
+            <ion-item class="register__name-input">
+                <ion-label position="floating">Name</ion-label>
+                <ion-input></ion-input>
+            </ion-item>
+
+            <!-- @todo add avatar selection -->
+
+            <ion-radio-group [(ngModel)]="roleSelection">
+                <ion-list-header>
+                    Rolle
+                </ion-list-header>
+                <ion-item>
+                    <ion-label>Firma</ion-label>
+                    <ion-radio value="company"></ion-radio>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label>Bewerber</ion-label>
+                    <ion-radio value="candidate"></ion-radio>
+                </ion-item>
+            </ion-radio-group>
+            <ion-button routerDirection="root" routerLink="/tabs/home">OK</ion-button>
+            <ion-button routerDirection="root" routerLink="/register">Zurück</ion-button>
+        </div>
+
+    </div>
+</ion-content>

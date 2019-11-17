@@ -1,0 +1,10 @@
+<div class="header">
+    <img (click)="openPage('kangoo-net')" alt="logo" class="header__logo" src="assets/icon/logo.png">
+    <div class="header__title">
+        <ion-icon (click)="back()" name="arrow-back"></ion-icon>
+        <span>{{title}}</span>
+    </div>
+    <div class="header__end">
+        <ion-icon (click)="openPage('user')" *ngIf="isLoggedIn" class="header__user" name="contact"></ion-icon>
+    </div>
+</div>
