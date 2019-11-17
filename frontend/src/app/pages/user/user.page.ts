@@ -7,7 +7,13 @@ import {Component, OnInit} from '@angular/core';
 })
 export class UserPage implements OnInit {
     user = {
-        name: 'Känguru'
+        name: 'Känguru',
+        role: 'candidate',
+        jobList: ['job1', 'job2'],
+        skillList: ['skill1', 'skill2'],
+        interestList: ['interest1', 'interest2'],
+        locationList: ['location1', 'location2'],
+        linkList: ['link1', 'link2'],
     };
 
     constructor() {

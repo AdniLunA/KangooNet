@@ -5,9 +5,60 @@
 </ion-header>
 
 <ion-content>
-    <qr-code errorCorrectionLevel="L" size="300" value="5dd011af4ca4823874e9fefb"></qr-code>
+    <div class="user__header">
+        <div class="user__title">Dein Account</div>
+        <div>Lass' dich scannen, um ein Matching zu finden und Kontakte zu knüpfen!</div>
+        <qr-code errorCorrectionLevel="L" size="300" value="5dd011af4ca4823874e9fefb"></qr-code>
 
-    <p>Name: {{user.name}}</p>
+        <div>Name: {{user.name}}</div>
+        <div>Rolle: {{user.role | mapRole}}</div>
+    </div>
+
+    <ion-list class="user__list jobs">
+        <ion-list-header>Jobs</ion-list-header>
+        <div *ngFor="let item of user.jobList">
+            <ion-item class="job__name">
+                {{item}}
+            </ion-item>
+            <div class="job__content">abc</div>
+
+        </div>
+
+    </ion-list>
+    <ion-list>
+        <ion-list-header>Skills</ion-list-header>
+        <ion-chip *ngFor="let item of user.skillList">
+            <ion-icon color="primary" name="school"></ion-icon>
+            <ion-label>{{item}}</ion-label>
+            <ion-icon name="close"></ion-icon>
+        </ion-chip>
+    </ion-list>
+    <ion-list>
+        <ion-list-header>Interessen</ion-list-header>
+        <ion-chip *ngFor="let item of user.interestList">
+            <ion-icon color="primary" name="heart"></ion-icon>
+            <ion-label>{{item}}</ion-label>
+            <ion-icon name="close"></ion-icon>
+        </ion-chip>
+    </ion-list>
+    <ion-list>
+        <ion-list-header>Orte</ion-list-header>
+
+        <ion-chip *ngFor="let item of user.locationList">
+            <ion-icon color="primary" name="pin"></ion-icon>
+            <ion-label>{{item}}</ion-label>
+            <ion-icon name="close"></ion-icon>
+        </ion-chip>
+    </ion-list>
+
+    <ion-list>
+        <ion-list-header>Links</ion-list-header>
+        <ion-item *ngFor="let item of user.linkList">
+            {{item}}
+        </ion-item>
+    </ion-list>
+
+
     <ion-button routerDirection="root" routerLink="/">Abmelden</ion-button>
 
     <ion-fab horizontal="end" routerDirection="forward" routerLink="/match" slot="fixed" vertical="bottom">
