@@ -1,23 +1,46 @@
-import {Injectable} from '@angular/core';
-import {ApiService} from "./api.service";
+import { Injectable } from '@angular/core';
+import { ApiService } from './api.service';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserService {
-    constructor(private apiService: ApiService) {
-    }
+  constructor(private apiService: ApiService) {}
 
-    getUser(id: string) {
-        //return user from api
-        return this.apiService.get('/user/' + id);
-    }
+  getUserList(){
+    return this.apiService.get('/user');
+  }
 
-    updateUser(name: string, avatar: string) {
-        //return user from api
-        return this.apiService.post('/user/', {
-            name,
-            avatar
-        });
-    }
+  getUser(id: string) {
+    //return user from api
+    return this.apiService.get('/user/' + id);
+  }
+
+  getUserbyName(name: string) {
+    return this.apiService.get('/login/' + name);
+  }
+
+  getAvatarList() {
+    return this.apiService.get( '/avatar');
+  }
+
+  createUser(name: string, avatar: string, role: string) {
+    //return user from api
+    return this.apiService.post('/create', {
+      name,
+      avatar,
+      role
+    });
+  }
+
+  addContact(idContact: string, idUser: string) {
+    return this.apiService.put('/user/add/' + idContact + '/asFirendTo/' + idUser)
+  }
+
+  addJob(id: string, req: string[], name: string) {
+    return this.apiService.put('/addJob/' + id, {
+      name,
+      req
+    });
+  }
 }

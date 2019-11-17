@@ -9,8 +9,13 @@ export class ConferenceService {
     constructor(private apiService: ApiService) {
     }
 
-    getConferences() {
+    getConferenceList() {
         //return all
-        this.apiService.get('/conference/')
+        return this.apiService.get('/conference');
+    }
+
+    getConference(String id) {
+        //return by id
+        return this.apiService.get('/confrence'+id);
     }
 }
