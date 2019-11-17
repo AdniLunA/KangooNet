@@ -13,7 +13,7 @@
     <div *ngIf="scannedRole==='company'" class="match--company">
         <ion-item class="match__title">
             {{companyMatch.name}}: {{companyMatch.matching}}
-            <ion-fab-button size="small" slot="end">
+            <ion-fab-button (click)="addContact()" size="small" slot="end">
                 <ion-icon name="add"></ion-icon>
             </ion-fab-button>
         </ion-item>
@@ -27,11 +27,10 @@
             </div>
         </ion-list>
     </div>
-    <!-- *ngIf="scannedRole==='candidate'" -->
-    <div class="match--candidate">
+    <div *ngIf="scannedRole==='candidate'" class="match--candidate">
         <ion-item class="match__title">
             {{userMatch.name}}
-            <ion-fab-button size="small" slot="end">
+            <ion-fab-button (click)="addContact()" size="small" slot="end">
                 <ion-icon name="add"></ion-icon>
             </ion-fab-button>
         </ion-item>
