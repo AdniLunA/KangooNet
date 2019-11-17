@@ -16,7 +16,9 @@ export class UserService {
 
     getUser(id: string) {
         //return user from api
-        return this.apiService.get('/user/' + id);
+        const user = this.apiService.get('/user/' + id);
+        console.log('getUser', user);
+        return user ? this.transformUser(user) : user;
     }
 
     getUserByName(name: string) {
@@ -54,14 +56,17 @@ export class UserService {
             role: userRes.role as RoleType,
             name: userRes.name,
             avatar: userRes.avatar,
-            linkList: [],
-            jobList: [],
+            linkList: userRes.linkList,
+            jobList: userRes.jobList.map(job => ({
+                name: job.name,
+                requirementsTag: job.requirementsTags.map(item => this.convertToTag(item, 'skill'))
+            })),
             tagList: {
-                skillList: [],
-                interestList: [],
-                locationList: [],
+                skillList: userRes.tagList.skillList.map(item => this.convertToTag(item, 'skill')),
+                interestList: userRes.tagList.interestList.map(item => this.convertToTag(item, 'interest')),
+                locationList: userRes.tagList.locationList.map(item => this.convertToTag(item, 'location')),
             },
-            contactList: [],
+            contactList: userRes.contactList,
             attendance: {
                 conference: {
                     id: userRes.attendance.conference.id,

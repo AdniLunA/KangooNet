@@ -8,8 +8,8 @@ import {UserService} from '../../services/user.service';
 })
 export class HomePage {
     favouritesList = [
-        {name: 'Pinguin', role: 'company'},
-        {name: 'Koala', role: 'candidate'},
+        {name: 'KängooCalls', role: 'company'},
+        {name: 'Hase', role: 'candidate'},
     ];
     contactsList = [
         {name: 'Herta', role: 'company'},
@@ -22,7 +22,7 @@ export class HomePage {
     }
 
     async ionViewDidEnter() {
-        this.test = await this.userService.getUserByName('Kangaroo');
-        console.log('asdjfadsjf', this.test);
+        this.test = await this.userService.getUser('5dd011af4ca4823874e9fefb');
+        console.log('fetched user', this.test);
     }
 }
