@@ -17,12 +17,11 @@ export class ApiService {
     private readonly defaultOptions: any = {
         headers: {
             [CONTENT_TYPE_HEADER]: 'application/json',
-            // The `Authorization` header will be applied by the AuthInterceptor
         },
     };
 
     /** Allowed request methods */
-    private readonly allowedMethods = ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'];
+    private readonly allowedMethods = ['GET', 'POST', 'PUT'];
 
     /** Constructor */
     public constructor(public http: HttpClient) {
@@ -31,13 +30,6 @@ export class ApiService {
     /** Merge the given options with the default options */
     public mergeRequestOptions(options: any): object {
         const headers = {...this.defaultOptions.headers, ...(options.headers || {})};
-
-        if (headers[CONTENT_TYPE_HEADER] === 'multipart/form-data') {
-            // By removing the `Content-Type` header for type multipart/form-data, the framework will add
-            // a boundary for the form-data automatically which cannot be determined otherwise:
-            //   'Content-Type': 'multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW'
-            delete headers[CONTENT_TYPE_HEADER];
-        }
 
         return {
             ...options,
@@ -109,15 +101,5 @@ export class ApiService {
     /** Generate a PUT request for a given endpoint */
     public async put(endpoint: string, body: any, reqOpts?: any): Promise<Response> {
         return this.request('PUT', endpoint, {...reqOpts, body});
-    }
-
-    /** Generate a DELETE request for a given endpoint */
-    public async delete(endpoint: string, reqOpts?: any): Promise<Response> {
-        return this.request('DELETE', endpoint, reqOpts);
-    }
-
-    /** Generate a PATCH request for a given endpoint */
-    public async patch(endpoint: string, body: any, reqOpts?: any): Promise<Response> {
-        return this.request('PATCH', endpoint, {...reqOpts, body});
     }
 }

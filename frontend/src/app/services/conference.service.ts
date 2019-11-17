@@ -8,4 +8,9 @@ export class ConferenceService {
 
     constructor(private apiService: ApiService) {
     }
+
+    getConferences() {
+        //return all
+        this.apiService.get('/conference/')
+    }
 }
