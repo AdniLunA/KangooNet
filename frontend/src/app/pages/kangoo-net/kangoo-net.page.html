@@ -1,6 +1,6 @@
 <ion-header>
     <ion-toolbar class="ion-no-padding">
-        <app-header [isLoggedIn]="false" title="KangooNet"></app-header>
+        <app-header title="KangooNet"></app-header>
     </ion-toolbar>
 </ion-header>
 
@@ -15,4 +15,10 @@
         Das Känguru dankt. Viel Spaß noch!
     </p>
     <img alt="kangaroo" class="kangoo-net__image" src="assets/kangaroo.jpg">
+
+    <ion-fab horizontal="end" routerDirection="forward" routerLink="/match" slot="fixed" vertical="bottom">
+        <ion-fab-button>
+            <ion-icon name="qr-scanner"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
 </ion-content>

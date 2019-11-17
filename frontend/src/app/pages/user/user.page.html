@@ -10,4 +10,9 @@
     <p>Name: {{user.name}}</p>
     <ion-button routerDirection="root" routerLink="/">Abmelden</ion-button>
 
+    <ion-fab horizontal="end" routerDirection="forward" routerLink="/match" slot="fixed" vertical="bottom">
+        <ion-fab-button>
+            <ion-icon name="qr-scanner"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
 </ion-content>
