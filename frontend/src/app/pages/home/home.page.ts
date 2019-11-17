@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {UserService} from "../../services/user.service";
 
 @Component({
     selector: 'app-home',
@@ -15,7 +16,13 @@ export class HomePage {
         {name: 'Mark', role: 'company'},
         {name: 'Uwe', role: 'candidate'},
     ];
-  constructor() {}
+    test = {};
 
-  ionViewDidEnter() {}
+    constructor(private userService: UserService) {
+    }
+
+    async ionViewDidEnter() {
+        this.test = await this.userService.getUserByName('Känguru');
+        console.log('asdjfadsjf', this.test);
+    }
 }

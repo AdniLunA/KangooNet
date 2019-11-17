@@ -16,12 +16,12 @@ export class UserService {
     return this.apiService.get('/user/' + id);
   }
 
-  getUserbyName(name: string) {
+    getUserByName(name: string) {
     return this.apiService.get('/login/' + name);
   }
 
   getAvatarList() {
-    return this.apiService.get( '/avatar');
+      return this.apiService.get('/getAvatar');
   }
 
   createUser(name: string, avatar: string, role: string) {
