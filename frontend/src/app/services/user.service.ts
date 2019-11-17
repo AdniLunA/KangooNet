@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {ApiService} from './api.service';
+import {IUser} from "../interfaces/user";
 
 @Injectable({
   providedIn: 'root',
@@ -43,4 +44,9 @@ export class UserService {
       req
     });
   }
+
+    transformUser(response: any): IUser {
+        // @todo
+        return null
+    }
 }

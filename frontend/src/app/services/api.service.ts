@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {HttpClient, HttpErrorResponse, HttpHeaders, HttpParams} from '@angular/common/http';
 
 const CONTENT_TYPE_HEADER = 'Content-Type';
 
@@ -11,7 +11,7 @@ const CONTENT_TYPE_HEADER = 'Content-Type';
 })
 export class ApiService {
   /** The API's base URL including protocol, port etc */
-  public readonly baseUrl = 'https://codecamphn.herokuapp.com/api';
+  public readonly baseUrl = 'https://kangaroonet.herokuapp.com/api';
 
   /** Default request options */
   private readonly defaultOptions: any = {

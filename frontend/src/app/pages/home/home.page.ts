@@ -22,7 +22,7 @@ export class HomePage {
     }
 
     async ionViewDidEnter() {
-        this.test = await this.userService.getUserByName('Känguru');
+        this.test = await this.userService.getUserByName('Kangaroo');
         console.log('asdjfadsjf', this.test);
     }
 }
