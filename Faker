@@ -13,7 +13,7 @@ function generateUsers() {
         let lastName = faker.name.lastName();
         let company = faker.company.companyName();
         let avatar = faker.image.avatar();
-        let role = faker.random.arrayElement(["company","attendance"]);
+        let mapRole = faker.random.arrayElement(["company","attendance"]);
         let link = faker.internet.url();
         let jobTitle = faker.name.jobTitle();
         let skill = faker.random.arrayElement(["Cloud Computing",
@@ -93,7 +93,7 @@ function generateUsers() {
             "last_name": lastName,
             "company": company,
             "avatar": avatar,
-            "role": role,
+            "mapRole": mapRole,
             "job": jobTitle,
             "contactList": contactList,
             "skill": skill,
