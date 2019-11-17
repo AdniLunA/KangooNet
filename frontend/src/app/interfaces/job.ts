@@ -1,4 +1,7 @@
+import {ITag} from "./tag";
+
 export interface IJob {
     name: string;
-    requirementsTags: string[];
+    requirementsTags: ITag[];
+    showAdd: boolean;
 }

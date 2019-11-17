@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ITag, TagType} from '../../interfaces/tag';
+import {UserService} from "../../services/user.service";
+import {IUser} from "../../interfaces/user";
 
 @Component({
   selector: 'app-user',
@@ -7,19 +9,18 @@ import {ITag, TagType} from '../../interfaces/tag';
   styleUrls: ['./user.page.scss'],
 })
 export class UserPage implements OnInit {
-  user = {
-    name: 'Känguru',
-    url:
-        'https://vignette.wikia.nocookie.net/daskaenguru/images/8/8d/Kangaroo-1149807.jpg/revision/latest/scale-to-width-down/670?cb=20190226174403&path-prefix=de',
-    role: 'candidate',
-    jobList: ['job1', 'job2'],
-    skillList: ['skill1', 'skill2'].map(item => this.convertToTag(item, 'skill')),
-    interestList: ['interest1', 'interest2'].map(item => this.convertToTag(item, 'interest')),
-    locationList: ['location1', 'location2'].map(item => this.convertToTag(item, 'location')),
-    linkList: ['link1', 'link2link2link2link2link2link2link2link2link2link2link2link2link2link2'],
+  user: IUser = null;
+  show = {
+    jobAdd: false,
+    skillAdd: false,
+    interestAdd: false,
+    locationAdd: false,
+    linkAdd: false
   };
 
-  constructor() {
+  constructor(public userService: UserService) {
+    this.user = userService.localUser;
+    console.log(this.user);
   }
 
   ngOnInit() {
@@ -31,5 +32,9 @@ export class UserPage implements OnInit {
       type,
       allowDelete: true,
     };
+  }
+
+  toggleAttribute(obj: any, attr: string) {
+    obj[attr] != obj[attr];
   }
 }

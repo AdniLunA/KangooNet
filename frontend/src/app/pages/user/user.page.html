@@ -4,18 +4,18 @@
     </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content *ngIf="user">
     <div class="user__header">
         <div class="user__title">Dein Account</div>
         <div>Lass' dich scannen, um ein Matching zu finden und Kontakte zu knüpfen!</div>
         <qr-code
                 errorCorrectionLevel="L"
                 size="300"
-                value="{{user.role + ':5dd011af4ca4823874e9fefb'}}"
+                value="{{user.role + ':' + user.id}}"
         ></qr-code>
 
         <div class="user__basics">
-            <img alt="avatar" class="user__avatar" src="{{user.url}}"/>
+            <img alt="avatar" class="user__avatar" src="{{user.avatar}}"/>
             <span>
         <div class="user__fact">
           <div class="user__fact user__fact--emphasized">Name:</div>
@@ -32,26 +32,29 @@
     <ion-list class="user__list jobs">
         <ion-list-header class="user__list-header">
             Jobs
-            <ion-fab-button size="small">
+            <ion-fab-button (click)="show.jobAdd != show.jobAdd" size="small">
                 <ion-icon name="add"></ion-icon>
             </ion-fab-button>
         </ion-list-header>
-        <app-add-info-form label="Job hinzufügen"></app-add-info-form>
-        <div *ngFor="let item of user.jobList">
+        <app-add-info-form *ngIf="show.jobAdd" label="Job hinzufügen"></app-add-info-form>
+        <div *ngFor="let job of user.jobList">
             <ion-item class="job__name">
                 <ion-icon name="arrow-dropdown" slot="start"></ion-icon>
-                {{item}}
+                {{job.name}}
                 <ion-icon color="secondary" name="close-circle" slot="end"></ion-icon>
             </ion-item>
             <div class="job__content tag-group">
                 <div class="tag-group__existing">
-                    <app-tag [tag]="convertToTag('req', 'skill')"></app-tag>
-                    <app-tag [tag]="convertToTag('req2', 'skill')"></app-tag>
-                    <ion-fab-button size="small">
+                    <span *ngFor="let tag of job.requirementsTags">
+                        <app-tag [tag]="tag"></app-tag>
+                    </span>
+                    <app-tag [tag]="convertToTag('JS', 'skill')"></app-tag>
+                    <ion-fab-button (click)="toggleAttribute(job, 'showAdd')" size="small">
                         <ion-icon name="add"></ion-icon>
                     </ion-fab-button>
                 </div>
-                <app-add-info-form class="job__add" label="Skill zu Job hinzufügen"></app-add-info-form>
+                <app-add-info-form *ngIf="job.showAdd" class="job__add"
+                                   label="Skill zu Job hinzufügen"></app-add-info-form>
             </div>
         </div>
     </ion-list>
@@ -63,7 +66,7 @@
     </ion-list-header>
     <div class="tag-group">
         <div class="tag-group__existing">
-      <span *ngFor="let item of user.skillList">
+      <span *ngFor="let item of user.tagList.skillList">
         <app-tag [tag]="item"></app-tag>
       </span>
         </div>
@@ -78,7 +81,7 @@
     </ion-list-header>
     <div class="tag-group">
         <div class="tag-group__existing">
-      <span *ngFor="let item of user.interestList">
+      <span *ngFor="let item of user.tagList.interestList">
         <app-tag [tag]="item"></app-tag>
       </span>
     </div>
@@ -93,7 +96,7 @@
     </ion-list-header>
     <div class="tag-group">
         <div class="tag-group__existing">
-      <span *ngFor="let item of user.locationList">
+      <span *ngFor="let item of user.tagList.locationList">
         <app-tag [tag]="item"></app-tag>
       </span>
     </div>
@@ -108,7 +111,7 @@
             </ion-fab-button>
         </ion-list-header>
         <ion-item *ngFor="let item of user.linkList">
-            <a class="user__link" href="{{item}}">{{item}}</a>
+            <a class="user__link" href="{{item.url}}">{{item.name}}</a>
             <ion-icon color="secondary" name="close-circle" slot="end"></ion-icon>
         </ion-item>
     </ion-list>
