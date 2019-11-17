@@ -1,41 +1,41 @@
 <ion-header>
-    <ion-toolbar class="ion-no-padding">
-        <app-header title="KängooN@"></app-header>
+  <ion-toolbar class="ion-no-padding">
+    <app-header title="KängooN@"></app-header>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <div class="home__header">
-        <div class="home__label">Aktuelle Messe:</div>
-        <div class="home__title">CodeCamp HN</div>
-    </div>
-    <ion-list>
-        <ion-list-header>Favoriten</ion-list-header>
-        <ion-item *ngFor="let contact of favouritesList">
-            {{contact.name}}
-            <span class="home__role">{{contact.role | mapRole}}</span>
-            <ion-icon name="star" slot="end"></ion-icon>
-        </ion-item>
-    </ion-list>
+  <div class="home__header">
+    <div class="home__label">Aktuelle Messe:</div>
+    <div class="home__title">CodeCamp HN</div>
+  </div>
+  <ion-list>
+    <ion-list-header>Favoriten</ion-list-header>
+    <ion-item *ngFor="let contact of favouritesList">
+      {{contact.name}}
+      <span class="home__role">{{contact.role | mapRole}}</span>
+      <ion-icon name="star" slot="end"></ion-icon>
+    </ion-item>
+  </ion-list>
 
-    <ion-list>
-        <ion-list-header>Weitere Kontakte</ion-list-header>
-        <ion-item *ngFor="let contact of contactsList">
-            {{contact.name}}
-            <span class="home__role">{{contact.role | mapRole}}</span>
-            <ion-icon name="star-outline" slot="end"></ion-icon>
-        </ion-item>
-    </ion-list>
+  <ion-list>
+    <ion-list-header>Weitere Kontakte</ion-list-header>
+    <ion-item *ngFor="let contact of contactsList">
+      {{contact.name}}
+      <span class="home__role">{{contact.role | mapRole}}</span>
+      <ion-icon name="star-outline" slot="end"></ion-icon>
+    </ion-item>
+  </ion-list>
 
-    <ion-fab
-            horizontal="end"
-            routerDirection="forward"
-            routerLink="/match"
-            slot="fixed"
-            vertical="bottom"
-    >
-        <ion-fab-button>
-            <ion-icon name="qr-scanner"></ion-icon>
-        </ion-fab-button>
-    </ion-fab>
+  <ion-fab
+          horizontal="end"
+          routerDirection="forward"
+          routerLink="/match"
+          slot="fixed"
+          vertical="bottom"
+  >
+    <ion-fab-button>
+      <ion-icon name="qr-scanner"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

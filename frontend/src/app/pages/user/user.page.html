@@ -14,8 +14,17 @@
                 value="{{user.role + ':5dd011af4ca4823874e9fefb'}}"
         ></qr-code>
 
-        <div>Name: {{user.name}}</div>
-        <div>Rolle: {{user.role | mapRole}}</div>
+        <div class="user__basics">
+            <img alt="avatar" class="user__avatar" src="{{user.url}}">
+            <span>
+        <div class="user__fact">
+          <div class="user__fact user__fact--emphasized"> Name:</div>
+          <span class="user__fact">{{user.name}}</span></div>
+        <div class="user__fact">
+          <div class="user__fact user__fact--emphasized"> Rolle:</div>
+          <span class="user__fact">{{user.role | mapRole}}</span></div>
+      </span>
+    </div>
     </div>
 
     <ion-list class="user__list jobs">
@@ -25,16 +34,22 @@
                 <ion-icon name="add"></ion-icon>
             </ion-fab-button>
         </ion-list-header>
+        <app-add-info-form label="Job hinzufügen"></app-add-info-form>
         <div *ngFor="let item of user.jobList">
             <ion-item class="job__name">
+                <ion-icon name="arrow-dropdown" slot="start"></ion-icon>
                 {{item}}
                 <ion-icon color="secondary" name="close-circle" slot="end"></ion-icon>
             </ion-item>
             <div class="job__content tag-group">
-                <app-tag [tag]="convertToTag('req', 'skill')"></app-tag>
-                <ion-fab-button size="small">
-                    <ion-icon name="add"></ion-icon>
-                </ion-fab-button>
+                <div class="tag-group__existing">
+                    <app-tag [tag]="convertToTag('req', 'skill')"></app-tag>
+                    <app-tag [tag]="convertToTag('req2', 'skill')"></app-tag>
+                    <ion-fab-button size="small">
+                        <ion-icon name="add"></ion-icon>
+                    </ion-fab-button>
+                </div>
+                <app-add-info-form class="job__add" label="Skill zu Job hinzufügen"></app-add-info-form>
             </div>
         </div>
     </ion-list>
@@ -45,9 +60,12 @@
         </ion-fab-button>
     </ion-list-header>
     <div class="tag-group">
-    <span *ngFor="let item of user.skillList">
+        <div class="tag-group__existing">
+      <span *ngFor="let item of user.skillList">
       <app-tag [tag]="item"></app-tag>
     </span>
+    </div>
+        <app-add-info-form class="job__add" label="Skill zu Job hinzufügen"></app-add-info-form>
     </div>
 
     <ion-list-header class="user__list-header">
@@ -57,9 +75,12 @@
         </ion-fab-button>
     </ion-list-header>
     <div class="tag-group">
-    <span *ngFor="let item of user.interestList">
+        <div class="tag-group__existing">
+      <span *ngFor="let item of user.interestList">
       <app-tag [tag]="item"></app-tag>
     </span>
+    </div>
+        <app-add-info-form class="job__add" label="Skill zu Job hinzufügen"></app-add-info-form>
     </div>
 
     <ion-list-header class="user__list-header">
@@ -69,9 +90,12 @@
         </ion-fab-button>
     </ion-list-header>
     <div class="tag-group">
-    <span *ngFor="let item of user.locationList">
+        <div class="tag-group__existing">
+          <span *ngFor="let item of user.locationList">
       <app-tag [tag]="item"></app-tag>
     </span>
+    </div>
+        <app-add-info-form class="job__add" label="Skill zu Job hinzufügen"></app-add-info-form>
     </div>
 
     <ion-list>

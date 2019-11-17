@@ -6,8 +6,9 @@ import {HeaderComponent} from './components/header/header.component';
 import {IonicModule} from '@ionic/angular';
 import {MapRolePipe} from './pipes/mapRole.pipe';
 import {TagComponent} from './components/tag/tag.component';
+import {AddInfoFormComponent} from './components/add-info-form/add-info-form.component';
 
-const components = [HeaderComponent, TagComponent];
+const components = [HeaderComponent, TagComponent, AddInfoFormComponent];
 
 @NgModule({
   declarations: [...components, MapRolePipe],

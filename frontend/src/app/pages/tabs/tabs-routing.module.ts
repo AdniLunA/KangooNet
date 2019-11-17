@@ -8,17 +8,17 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-          path: 'conference',
+        path: 'conference',
         children: [
           {
             path: '',
-              loadChildren: () =>
-                  import('../conference/conference.module').then(m => m.ConferencePageModule),
+            loadChildren: () =>
+                import('../conference/conference.module').then(m => m.ConferencePageModule),
           },
         ],
       },
       {
-          path: 'home',
+        path: 'home',
         children: [
           {
             path: '',
@@ -27,25 +27,25 @@ const routes: Routes = [
         ],
       },
       {
-          path: 'dashboard',
+        path: 'dashboard',
         children: [
           {
             path: '',
-              loadChildren: () =>
-                  import('../dashboard/dashboard.module').then(m => m.DashboardPageModule),
+            loadChildren: () =>
+                import('../dashboard/dashboard.module').then(m => m.DashboardPageModule),
           },
         ],
       },
       {
         path: '',
-          redirectTo: '/tabs/home',
+        redirectTo: '/tabs/home',
         pathMatch: 'full',
       },
     ],
   },
   {
     path: '',
-      redirectTo: '/tabs/home',
+    redirectTo: '/tabs/home',
     pathMatch: 'full',
   },
 ];

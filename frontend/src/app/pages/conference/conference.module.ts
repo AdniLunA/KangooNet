@@ -8,11 +8,11 @@ import {SharedModule} from '../../shared/shared.module';
 @NgModule({
   imports: [
     IonicModule,
-      SharedModule,
+    SharedModule,
     FormsModule,
-      RouterModule.forChild([{path: '', component: ConferencePage}]),
+    RouterModule.forChild([{path: '', component: ConferencePage}]),
   ],
-    declarations: [ConferencePage],
+  declarations: [ConferencePage],
 })
 export class ConferencePageModule {
 }
