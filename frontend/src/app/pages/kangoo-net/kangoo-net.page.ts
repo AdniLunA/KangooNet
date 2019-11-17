@@ -6,11 +6,9 @@ import {Component, OnInit} from '@angular/core';
     styleUrls: ['./kangoo-net.page.scss'],
 })
 export class KangooNetPage implements OnInit {
-
     constructor() {
     }
 
     ngOnInit() {
     }
-
 }

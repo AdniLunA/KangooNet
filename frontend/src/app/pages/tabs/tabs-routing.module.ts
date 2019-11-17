@@ -12,7 +12,8 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: () => import('../conference/conference.module').then(m => m.ConferencePageModule),
+              loadChildren: () =>
+                  import('../conference/conference.module').then(m => m.ConferencePageModule),
           },
         ],
       },
@@ -30,7 +31,8 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: () => import('../dashboard/dashboard.module').then(m => m.DashboardPageModule),
+              loadChildren: () =>
+                  import('../dashboard/dashboard.module').then(m => m.DashboardPageModule),
           },
         ],
       },

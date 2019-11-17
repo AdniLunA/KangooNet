@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {ITag, TagType} from '../../interfaces/tag';
 
 @Component({
     selector: 'app-user',
@@ -8,12 +9,12 @@ import {Component, OnInit} from '@angular/core';
 export class UserPage implements OnInit {
     user = {
         name: 'Känguru',
-        role: 'candidate',
+        role: 'company',
         jobList: ['job1', 'job2'],
-        skillList: ['skill1', 'skill2'],
-        interestList: ['interest1', 'interest2'],
-        locationList: ['location1', 'location2'],
-        linkList: ['link1', 'link2'],
+        skillList: ['skill1', 'skill2'].map(item => this.convertToTag(item, 'skill')),
+        interestList: ['interest1', 'interest2'].map(item => this.convertToTag(item, 'interest')),
+        locationList: ['location1', 'location2'].map(item => this.convertToTag(item, 'location')),
+        linkList: ['link1', 'link2link2link2link2link2link2link2link2link2link2link2link2link2link2'],
     };
 
     constructor() {
@@ -22,4 +23,11 @@ export class UserPage implements OnInit {
     ngOnInit() {
     }
 
+    convertToTag(item: string, type: TagType): ITag {
+        return {
+            name: item,
+            type,
+            allowDelete: true,
+        };
+    }
 }

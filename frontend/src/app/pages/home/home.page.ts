@@ -8,12 +8,13 @@ import {Component} from '@angular/core';
 export class HomePage {
     favouritesList = [
         {name: 'Pinguin', role: 'company'},
-        {name: 'Koala', role: 'candidate'}]
+        {name: 'Koala', role: 'candidate'},
+    ];
     contactsList = [
         {name: 'Herta', role: 'company'},
         {name: 'Mark', role: 'company'},
-        {name: 'Uwe', role: 'candidate'}
-    ]
+        {name: 'Uwe', role: 'candidate'},
+    ];
   constructor() {}
 
   ionViewDidEnter() {}

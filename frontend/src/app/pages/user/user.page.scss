@@ -12,4 +12,26 @@
     font-size: 20px;
     text-align: center;
   }
+
+  &__link {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  &__list-header {
+    background-color: papayawhip;
+  }
+}
+
+.job {
+  &__content {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.tag-group {
+  margin: 8px 8px 16px;
 }

@@ -10,7 +10,7 @@ describe('KangooNetPage', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             declarations: [KangooNetPage],
-            imports: [IonicModule.forRoot()]
+            imports: [IonicModule.forRoot()],
         }).compileComponents();
 
         fixture = TestBed.createComponent(KangooNetPage);

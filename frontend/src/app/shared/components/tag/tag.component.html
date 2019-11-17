@@ -1,0 +1,5 @@
+<ion-chip class="tag">
+    <ion-icon color="secondary" name="{{ getIcon() }}"></ion-icon>
+    <ion-label>{{ tag.name }}</ion-label>
+    <ion-icon *ngIf="tag.allowDelete" color="secondary" name="close"></ion-icon>
+</ion-chip>

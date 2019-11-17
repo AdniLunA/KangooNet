@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {NavController} from "@ionic/angular";
+import {NavController} from '@ionic/angular';
 
 @Component({
     selector: 'app-header',
@@ -21,9 +21,6 @@ export class HeaderComponent implements OnInit {
     }
 
     openPage(pageName: string) {
-        if (this.isLoggedIn) {
-            this.navCtrl.navigateForward(pageName);
-        }
+        this.navCtrl.navigateForward(pageName);
     }
-
 }

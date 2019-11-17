@@ -4,8 +4,8 @@ import {FormsModule} from '@angular/forms';
 import {IonicModule} from '@ionic/angular';
 
 import {LandingPage} from './landing.page';
-import {SharedModule} from "../../shared/shared.module";
-import {RouterModule, Routes} from "@angular/router";
+import {SharedModule} from '../../shared/shared.module';
+import {RouterModule, Routes} from '@angular/router';
 
 const routes: Routes = [
     {
@@ -15,13 +15,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    imports: [
-        SharedModule,
-        FormsModule,
-        IonicModule,
-        RouterModule.forChild(routes)
-    ],
-    declarations: [LandingPage]
+    imports: [SharedModule, FormsModule, IonicModule, RouterModule.forChild(routes)],
+    declarations: [LandingPage],
 })
 export class LandingPageModule {
 }

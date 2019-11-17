@@ -1,19 +1,19 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {IonicModule} from '@ionic/angular';
 
-import {HeaderComponent} from './header.component';
+import {TagComponent} from './tag.component';
 
-describe('HeaderComponent', () => {
-    let component: HeaderComponent;
-    let fixture: ComponentFixture<HeaderComponent>;
+describe('TagComponent', () => {
+    let component: TagComponent;
+    let fixture: ComponentFixture<TagComponent>;
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [HeaderComponent],
-            imports: [IonicModule.forRoot()]
+            declarations: [TagComponent],
+            imports: [IonicModule.forRoot()],
         }).compileComponents();
 
-        fixture = TestBed.createComponent(HeaderComponent);
+        fixture = TestBed.createComponent(TagComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     }));
