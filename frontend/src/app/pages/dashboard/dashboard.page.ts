@@ -6,18 +6,5 @@ import {Component} from '@angular/core';
     styleUrls: ['dashboard.page.scss'],
 })
 export class DashboardPage {
-    scanSuccess: boolean;
-    scannedId: string;
-
   constructor() {}
-
-    scanSuccessHandler(event: Event) {
-        console.log(event);
-        this.scanSuccess = true;
-        this.scannedId = event.toString();
-    }
-
-    ionicViewDidEnter() {
-        this.scanSuccess = false;
-    }
 }

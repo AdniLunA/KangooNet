@@ -5,9 +5,6 @@
 </ion-header>
 
 <ion-content>
-    <zxing-scanner (scanSuccess)="scanSuccessHandler($event)" *ngIf="scanSuccess"></zxing-scanner>
-    <p *ngIf="scannedId">{{scannedId}}</p>
-
     <ion-fab horizontal="end" routerDirection="forward" routerLink="/match" slot="fixed" vertical="bottom">
         <ion-fab-button>
             <ion-icon name="qr-scanner"></ion-icon>

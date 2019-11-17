@@ -5,5 +5,7 @@
 </ion-header>
 
 <ion-content>
-
+    <zxing-scanner (scanSuccess)="scanSuccessHandler($event)" *ngIf="!scanSuccess"></zxing-scanner>
+    <p *ngIf="scannedId"> {{scannedId}}</p>
+    <ion-button (click)="retry()">Erneut scannen</ion-button>
 </ion-content>
