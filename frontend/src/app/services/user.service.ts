@@ -62,14 +62,14 @@ export class UserService {
             },
             "contactList": [
                 {
-                    "name": "Härta",
+                    "name": "Max",
                     "personalFeedback": "40%",
                     "isfavorite": "false",
                     "id": "5dd123d57c9973215841f30a"
                 },
                 {
                     "id": "5dd0164d4ca4823874e9fefd",
-                    "name": "Koala",
+                    "name": "Bob",
                     "isfavorite": "true",
                     "personalfeedback": "70%"
                 }
