@@ -1,0 +1,36 @@
+.landing {
+  background-color: wheat;
+  padding: 16px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+
+  &__header {
+    text-align: center;
+  }
+
+  &__logo {
+    max-width: 300px;
+  }
+
+  &__subtitle {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  &__name-input {
+    margin-bottom: 16px;
+  }
+
+  &__form {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    min-width: 300px;
+    max-width: 500px;
+  }
+}
