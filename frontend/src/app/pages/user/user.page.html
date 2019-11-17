@@ -8,7 +8,7 @@
     <div class="user__header">
         <div class="user__title">Dein Account</div>
         <div>Lass' dich scannen, um ein Matching zu finden und Kontakte zu knüpfen!</div>
-        <qr-code errorCorrectionLevel="L" size="300" value="5dd011af4ca4823874e9fefb"></qr-code>
+        <qr-code errorCorrectionLevel="L" size="300" value="{{user.role + ':5dd011af4ca4823874e9fefb'}}"></qr-code>
 
         <div>Name: {{user.name}}</div>
         <div>Rolle: {{user.role | mapRole}}</div>
@@ -21,10 +21,9 @@
                 {{item}}
             </ion-item>
             <div class="job__content">abc</div>
-
         </div>
-
     </ion-list>
+
     <ion-list>
         <ion-list-header>Skills</ion-list-header>
         <ion-chip *ngFor="let item of user.skillList">

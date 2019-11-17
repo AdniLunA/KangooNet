@@ -5,7 +5,55 @@
 </ion-header>
 
 <ion-content>
-    <zxing-scanner (scanSuccess)="scanSuccessHandler($event)" *ngIf="!scanSuccess"></zxing-scanner>
-    <p *ngIf="scannedId"> {{scannedId}}</p>
     <ion-button (click)="retry()">Erneut scannen</ion-button>
+
+    <zxing-scanner (scanSuccess)="scanSuccessHandler($event)" *ngIf="!scanSuccess"></zxing-scanner>
+    <p *ngIf="scannedId">{{scannedRole | mapRole}} {{scannedId}}</p>
+
+    <div *ngIf="scannedRole==='company'" class="match--company">
+        <div class="match__title">
+            {{companyMatch.name}}: {{companyMatch.matching}}%
+        </div>
+
+        <ion-list class="user__list jobs">
+            <ion-list-header>Jobs</ion-list-header>
+            <div *ngFor="let item of companyMatch.jobList">
+                <ion-item class="job__name">
+                    {{item.name}} - {{item.matching}}%
+                </ion-item>
+            </div>
+        </ion-list>
+    </div>
+
+    <div *ngIf="scannedRole==='candidate'" class="match--candidate">
+        <div class="match__title">
+            {{userMatch.name}}
+        </div>
+
+        <ion-list>
+            <ion-list-header>Skills</ion-list-header>
+            <ion-chip *ngFor="let item of userMatch.skillList">
+                <ion-icon color="primary" name="school"></ion-icon>
+                <ion-label>{{item}}</ion-label>
+                <ion-icon name="close"></ion-icon>
+            </ion-chip>
+        </ion-list>
+        <ion-list>
+            <ion-list-header>Interessen</ion-list-header>
+            <ion-chip *ngFor="let item of userMatch.interestList">
+                <ion-icon color="primary" name="heart"></ion-icon>
+                <ion-label>{{item}}</ion-label>
+                <ion-icon name="close"></ion-icon>
+            </ion-chip>
+        </ion-list>
+        <ion-list>
+            <ion-list-header>Orte</ion-list-header>
+
+            <ion-chip *ngFor="let item of userMatch.locationList">
+                <ion-icon color="primary" name="pin"></ion-icon>
+                <ion-label>{{item}}</ion-label>
+                <ion-icon name="close"></ion-icon>
+            </ion-chip>
+        </ion-list>
+    </div>
 </ion-content>
